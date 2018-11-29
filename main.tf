@@ -10,10 +10,11 @@ module "ec2_instance" {
   name = "jboero-testing"
   subnet_id = "${module.vpc.private_subnets}"
   vpc_security_group_ids = "${module.vpc.default_security_group_id}"
-  cidr = "10.0.0.0/16"
+  
 }
 
 module "vpc" {
   source  = "app.terraform.io/JoeStack/vpc/aws"
   version = "1.46.0"
+  cidr = "10.0.0.0/16"
 }
