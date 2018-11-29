@@ -11,7 +11,7 @@ module "ec2_instance" {
   ami = "ami-048fac6b039d41144"
   instance_type = "t2.small"
   name = "jboero-testing"
-  subnet_id = "${module.vpc.private_subnets}"
+  subnet_id = "${module.vpc.private_subnets[0]}"
   vpc_security_group_ids = "${module.vpc.default_security_group_id}"
   
 }
